@@ -6,7 +6,6 @@
 class Rectangle: public BaseShape
 {
 public:
-    //Rectangle() = default;
     Rectangle(const QRect& r);
     ~Rectangle() = default;
 
@@ -17,7 +16,7 @@ public:
     QPoint center() const override;
     QRect boundingRect() const override;
 
-    QJsonObject toJson() const override;
+    QJsonObject serialize() const override;
 
 private:
     QRect rectangle;

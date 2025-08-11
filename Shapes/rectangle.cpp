@@ -34,7 +34,7 @@ QRect Rectangle::boundingRect() const
     return rectangle;
 }
 
-QJsonObject Rectangle::toJson() const
+QJsonObject Rectangle::serialize() const
 {
     QJsonObject obj;
     obj["type"] = "Rectangle";

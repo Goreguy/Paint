@@ -29,6 +29,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         States.h
         Shapes/BaseShape.h Shapes/BaseShape.cpp
         Shapes/rectangle.h Shapes/rectangle.cpp
+        Shapes/ellipse.h Shapes/ellipse.cpp
+        Shapes/triangle.h Shapes/triangle.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

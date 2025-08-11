@@ -180,6 +180,36 @@ CMakeFiles/Paint.dir/Shapes/rectangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Paint.dir/Shapes/rectangle.cpp.s"
 	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vova4\Documents\Paint\Paint\Shapes\rectangle.cpp -o CMakeFiles\Paint.dir\Shapes\rectangle.cpp.s
 
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj: CMakeFiles/Paint.dir/flags.make
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj: CMakeFiles/Paint.dir/includes_CXX.rsp
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj: C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.cpp
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj: CMakeFiles/Paint.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vova4\Documents\Paint\Paint\build\Desktop_Qt_6_7_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj -MF CMakeFiles\Paint.dir\Shapes\ellipse.cpp.obj.d -o CMakeFiles\Paint.dir\Shapes\ellipse.cpp.obj -c C:\Users\vova4\Documents\Paint\Paint\Shapes\ellipse.cpp
+
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Paint.dir/Shapes/ellipse.cpp.i"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vova4\Documents\Paint\Paint\Shapes\ellipse.cpp > CMakeFiles\Paint.dir\Shapes\ellipse.cpp.i
+
+CMakeFiles/Paint.dir/Shapes/ellipse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Paint.dir/Shapes/ellipse.cpp.s"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vova4\Documents\Paint\Paint\Shapes\ellipse.cpp -o CMakeFiles\Paint.dir\Shapes\ellipse.cpp.s
+
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj: CMakeFiles/Paint.dir/flags.make
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj: CMakeFiles/Paint.dir/includes_CXX.rsp
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj: C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.cpp
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj: CMakeFiles/Paint.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vova4\Documents\Paint\Paint\build\Desktop_Qt_6_7_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj -MF CMakeFiles\Paint.dir\Shapes\triangle.cpp.obj.d -o CMakeFiles\Paint.dir\Shapes\triangle.cpp.obj -c C:\Users\vova4\Documents\Paint\Paint\Shapes\triangle.cpp
+
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Paint.dir/Shapes/triangle.cpp.i"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vova4\Documents\Paint\Paint\Shapes\triangle.cpp > CMakeFiles\Paint.dir\Shapes\triangle.cpp.i
+
+CMakeFiles/Paint.dir/Shapes/triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Paint.dir/Shapes/triangle.cpp.s"
+	C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vova4\Documents\Paint\Paint\Shapes\triangle.cpp -o CMakeFiles\Paint.dir\Shapes\triangle.cpp.s
+
 # Object files for target Paint
 Paint_OBJECTS = \
 "CMakeFiles/Paint.dir/Paint_autogen/mocs_compilation.cpp.obj" \
@@ -188,7 +218,9 @@ Paint_OBJECTS = \
 "CMakeFiles/Paint.dir/PaintArea.cpp.obj" \
 "CMakeFiles/Paint.dir/mainwindowSlots.cpp.obj" \
 "CMakeFiles/Paint.dir/Shapes/BaseShape.cpp.obj" \
-"CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj"
+"CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj" \
+"CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj" \
+"CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj"
 
 # External object files for target Paint
 Paint_EXTERNAL_OBJECTS =
@@ -200,6 +232,8 @@ Paint.exe: CMakeFiles/Paint.dir/PaintArea.cpp.obj
 Paint.exe: CMakeFiles/Paint.dir/mainwindowSlots.cpp.obj
 Paint.exe: CMakeFiles/Paint.dir/Shapes/BaseShape.cpp.obj
 Paint.exe: CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj
+Paint.exe: CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj
+Paint.exe: CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj
 Paint.exe: CMakeFiles/Paint.dir/build.make
 Paint.exe: C:/Qt/6.7.3/mingw_64/lib/libQt6Widgets.a
 Paint.exe: C:/Qt/6.7.3/mingw_64/lib/libQt6Gui.a
@@ -208,7 +242,7 @@ Paint.exe: C:/Qt/6.7.3/mingw_64/lib/libQt6EntryPoint.a
 Paint.exe: CMakeFiles/Paint.dir/linkLibs.rsp
 Paint.exe: CMakeFiles/Paint.dir/objects1.rsp
 Paint.exe: CMakeFiles/Paint.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vova4\Documents\Paint\Paint\build\Desktop_Qt_6_7_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Paint.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vova4\Documents\Paint\Paint\build\Desktop_Qt_6_7_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Paint.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Paint.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

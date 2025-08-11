@@ -25,11 +25,12 @@ public:
     virtual QPoint center() const = 0;
     virtual QRect boundingRect() const = 0;
 
-    virtual QJsonObject toJson() const = 0;
-    static std::unique_ptr<BaseShape> fromJson(const QJsonObject &obj);
+    virtual QJsonObject serialize() const = 0;
+    static std::unique_ptr<BaseShape> deserialize(const QJsonObject& obj);//реализовать
 
 protected:
     ShapeType shape_type;
+
 };
 
 #endif // BASESHAPE_H

@@ -611,8 +611,12 @@ Paint_autogen/timestamp: \
 	C:/Users/vova4/Documents/Paint/Paint/PaintArea.h \
 	C:/Users/vova4/Documents/Paint/Paint/Shapes/BaseShape.cpp \
 	C:/Users/vova4/Documents/Paint/Paint/Shapes/BaseShape.h \
+	C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.cpp \
+	C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.h \
 	C:/Users/vova4/Documents/Paint/Paint/Shapes/rectangle.cpp \
 	C:/Users/vova4/Documents/Paint/Paint/Shapes/rectangle.h \
+	C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.cpp \
+	C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.h \
 	C:/Users/vova4/Documents/Paint/Paint/States.h \
 	C:/Users/vova4/Documents/Paint/Paint/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/vova4/Documents/Paint/Paint/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \

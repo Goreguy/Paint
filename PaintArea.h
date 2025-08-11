@@ -8,6 +8,8 @@
 #include <QMouseEvent>
 #include "Shapes/BaseShape.h"
 #include "Shapes/rectangle.h"
+#include "Shapes/ellipse.h"
+#include "Shapes/triangle.h"
 #include <QPainter>
 #include <QFile>
 
@@ -31,6 +33,7 @@ private:
     QPoint startPoint;
     QPoint currentPoint;
     bool drawing = false;
+    bool connectingShapes = false;
 
     std::vector<std::unique_ptr<BaseShape>> shapes;
     // std::vector<std::unique_ptr<Connection>> connections;
@@ -38,10 +41,11 @@ private:
     BaseShape* pickShapeAt(const QPoint &pt);
     void removeShape(BaseShape* s);
 
-    BaseShape* connectionStart = nullptr;
-
+    BaseShape* connectionStartFromShape = nullptr;
     BaseShape* movingShape = nullptr;
     QPoint lastMousePos;
+
+    std::unordered_map<ToolType, std::function<void(const QRect&)>> drawMap;
 };
 
 #endif // PAINTAREA_H

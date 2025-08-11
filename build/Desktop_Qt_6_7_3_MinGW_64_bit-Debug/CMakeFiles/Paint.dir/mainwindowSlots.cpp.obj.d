@@ -435,6 +435,8 @@ CMakeFiles/Paint.dir/mainwindowSlots.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtCore/quuid.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/rectangle.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/BaseShape.h \
+ C:\Users\vova4\Documents\Paint\Paint\Shapes/ellipse.h \
+ C:\Users\vova4\Documents\Paint\Paint\Shapes/triangle.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QFile \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qfile.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qfiledevice.h \

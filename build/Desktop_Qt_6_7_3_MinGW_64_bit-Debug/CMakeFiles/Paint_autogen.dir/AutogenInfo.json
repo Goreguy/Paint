@@ -269,9 +269,21 @@
 			null
 		],
 		[
+			"C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.h",
+			"MU",
+			"CEP2VGEIJC/moc_ellipse.cpp",
+			null
+		],
+		[
 			"C:/Users/vova4/Documents/Paint/Paint/Shapes/rectangle.h",
 			"MU",
 			"CEP2VGEIJC/moc_rectangle.cpp",
+			null
+		],
+		[
+			"C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.h",
+			"MU",
+			"CEP2VGEIJC/moc_triangle.cpp",
 			null
 		],
 		[
@@ -364,8 +376,14 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.cpp", "MU", null ],
 		[
 			"C:/Users/vova4/Documents/Paint/Paint/Shapes/rectangle.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.cpp",
 			"MU",
 			null
 		],
