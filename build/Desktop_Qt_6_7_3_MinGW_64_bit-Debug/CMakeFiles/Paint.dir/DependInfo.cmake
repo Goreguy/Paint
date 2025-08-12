@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/vova4/Documents/Paint/Paint/Shapes/ellipse.cpp" "CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj" "gcc" "CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj.d"
   "C:/Users/vova4/Documents/Paint/Paint/Shapes/rectangle.cpp" "CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj" "gcc" "CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj.d"
   "C:/Users/vova4/Documents/Paint/Paint/Shapes/triangle.cpp" "CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj" "gcc" "CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj.d"
+  "C:/Users/vova4/Documents/Paint/Paint/connection.cpp" "CMakeFiles/Paint.dir/connection.cpp.obj" "gcc" "CMakeFiles/Paint.dir/connection.cpp.obj.d"
   "C:/Users/vova4/Documents/Paint/Paint/main.cpp" "CMakeFiles/Paint.dir/main.cpp.obj" "gcc" "CMakeFiles/Paint.dir/main.cpp.obj.d"
   "C:/Users/vova4/Documents/Paint/Paint/mainwindow.cpp" "CMakeFiles/Paint.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/Paint.dir/mainwindow.cpp.obj.d"
   "C:/Users/vova4/Documents/Paint/Paint/mainwindowSlots.cpp" "CMakeFiles/Paint.dir/mainwindowSlots.cpp.obj" "gcc" "CMakeFiles/Paint.dir/mainwindowSlots.cpp.obj.d"

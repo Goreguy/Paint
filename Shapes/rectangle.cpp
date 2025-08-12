@@ -1,7 +1,7 @@
 #include "rectangle.h"
 
 Rectangle::Rectangle(const QRect& r)
-    : BaseShape(ShapeType::Rectangle), rectangle{r}
+    : BaseShape(ShapeType::Rectangle, r)
 {}
 
 void Rectangle::draw(QPainter* painter)

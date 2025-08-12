@@ -6,5 +6,5 @@ CXX_DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMA
 
 CXX_INCLUDES = @CMakeFiles/Paint.dir/includes_CXX.rsp
 
-CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++20 -fdiagnostics-color=always
 

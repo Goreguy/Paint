@@ -1,7 +1,7 @@
 #include "ellipse.h"
 
 Ellipse::Ellipse(const QRect& r)
-    : BaseShape(ShapeType::Ellipse), rectangle{r}
+    : BaseShape(ShapeType::Ellipse, r)
 {}
 
 void Ellipse::draw(QPainter* painter)
@@ -16,7 +16,7 @@ bool Ellipse::contains(const QPoint& point) const
 
 void Ellipse::resize(const QRect& newBounds)
 {
-    rectangle = newBounds;;
+    rectangle = newBounds;
 }
 
 void Ellipse::move(const QPoint& delta)

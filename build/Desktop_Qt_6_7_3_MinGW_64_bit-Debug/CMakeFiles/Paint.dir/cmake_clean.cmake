@@ -14,6 +14,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Paint.dir/Shapes/rectangle.cpp.obj.d"
   "CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj"
   "CMakeFiles/Paint.dir/Shapes/triangle.cpp.obj.d"
+  "CMakeFiles/Paint.dir/connection.cpp.obj"
+  "CMakeFiles/Paint.dir/connection.cpp.obj.d"
   "CMakeFiles/Paint.dir/main.cpp.obj"
   "CMakeFiles/Paint.dir/main.cpp.obj.d"
   "CMakeFiles/Paint.dir/mainwindow.cpp.obj"

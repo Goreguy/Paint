@@ -6,7 +6,7 @@
 class Triangle: public BaseShape
 {
 public:
-    Triangle(const QPolygon& p);
+    Triangle(const QRect& r);
     ~Triangle() = default;
 
     void draw(QPainter* painter) override;

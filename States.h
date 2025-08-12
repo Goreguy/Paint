@@ -3,25 +3,18 @@
 
 enum class ToolType
 {
-    Rectangle,
-    Triangle,
-    Ellipse,
-    Connect,
-    Move,
-    Erase,
-    Load,
-    Save,
+    RectangleTool,
+    TriangleTool,
+    EllipseTool,
+    LinkTool,
+    MoveTool,
+    EraseTool,
+    LoadTool,
+    SaveTool,
 
-    None
+    NoneTool
 };
 
-enum class ShapeType
-{
-    Rectangle,
-    Triangle,
-    Ellipse,
-    link
 
-};
 
 #endif // STATES_H

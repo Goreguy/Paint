@@ -33,26 +33,26 @@ void MainWindow::createToolOptions(QToolBar* toolB)
 {
     spacer(toolB, 60);
     toolB->addSeparator();
-    QAction* rectangleButton = createAction(QString::fromUtf8("Прямоугольник"), toolB, ToolType::Rectangle);
+    QAction* rectangleButton = createAction(QString::fromUtf8("Прямоугольник"), toolB, ToolType::RectangleTool);
     spacer(toolB, 30);
-    QAction* triangleButton = createAction(QString::fromUtf8("Треугольник"), toolB, ToolType::Triangle);
+    QAction* triangleButton = createAction(QString::fromUtf8("Треугольник"), toolB, ToolType::TriangleTool);
     spacer(toolB, 30);
-    QAction* ellipseButton = createAction(QString::fromUtf8("Эллипс"), toolB, ToolType::Ellipse);
+    QAction* ellipseButton = createAction(QString::fromUtf8("Эллипс"), toolB, ToolType::EllipseTool);
     toolB->addSeparator();
     spacer(toolB);
     toolB->addSeparator();
-    QAction* connectButton = createAction(QString::fromUtf8("Связь"), toolB, ToolType::Connect);
+    QAction* connectButton = createAction(QString::fromUtf8("Связь"), toolB, ToolType::LinkTool);
     toolB->addSeparator();
     spacer(toolB, 30);
     toolB->addSeparator();
-    QAction* moveButton = createAction(QString::fromUtf8("Переместить"), toolB, ToolType::Move);
+    QAction* moveButton = createAction(QString::fromUtf8("Переместить"), toolB, ToolType::MoveTool);
     spacer(toolB, 30);
-    QAction* eraseButton = createAction(QString::fromUtf8("\U0001F5D1"), toolB, ToolType::Erase);
+    QAction* eraseButton = createAction(QString::fromUtf8("\U0001F5D1"), toolB, ToolType::EraseTool);
     toolB->addSeparator();
     spacer(toolB);
     toolB->addSeparator();
-    QAction* loadFileButton= createAction(QString::fromUtf8("Загрузить"), toolB, ToolType::Load);
-    QAction* saveFileButton = createAction(QString::fromUtf8("Сохранить"), toolB, ToolType::Save);
+    QAction* loadFileButton= createAction(QString::fromUtf8("Загрузить"), toolB, ToolType::LoadTool);
+    QAction* saveFileButton = createAction(QString::fromUtf8("Сохранить"), toolB, ToolType::SaveTool);
     toolB->addSeparator();
     spacer(toolB, 60);
 

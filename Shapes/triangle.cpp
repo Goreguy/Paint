@@ -1,7 +1,7 @@
 #include "triangle.h"
 
-Triangle::Triangle(const QPolygon& p)
-    : BaseShape(ShapeType::Triangle), polygon{p}
+Triangle::Triangle(const QRect& r)
+    : BaseShape(ShapeType::Triangle, r)
 {}
 
 void Triangle::draw(QPainter* painter)

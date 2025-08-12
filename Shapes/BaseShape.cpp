@@ -1,7 +1,7 @@
 #include "BaseShape.h"
 
-BaseShape::BaseShape(ShapeType type)
-    :shape_type(type)
+BaseShape::BaseShape(ShapeType type, const QRect& r)
+    :shape_type(type), rectangle{r}
 {
 }
 

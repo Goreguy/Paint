@@ -293,6 +293,12 @@
 			null
 		],
 		[
+			"C:/Users/vova4/Documents/Paint/Paint/connection.h",
+			"MU",
+			"EWIEGA46WW/moc_connection.cpp",
+			null
+		],
+		[
 			"C:/Users/vova4/Documents/Paint/Paint/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -351,7 +357,7 @@
 	"MOC_PREDEFS_CMD" : 
 	[
 		"C:/Qt/Tools/mingw1120_64/bin/g++.exe",
-		"-std=gnu++17",
+		"-std=gnu++20",
 		"-dM",
 		"-E",
 		"-c",
@@ -387,6 +393,7 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/vova4/Documents/Paint/Paint/connection.cpp", "MU", null ],
 		[ "C:/Users/vova4/Documents/Paint/Paint/main.cpp", "MU", null ],
 		[ "C:/Users/vova4/Documents/Paint/Paint/mainwindow.cpp", "MU", null ],
 		[

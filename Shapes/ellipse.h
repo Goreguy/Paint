@@ -18,8 +18,6 @@ public:
 
     QJsonObject serialize() const override;
 
-private:
-    QRect rectangle;
 
 };
 
