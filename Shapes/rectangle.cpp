@@ -36,13 +36,14 @@ QRect Rectangle::boundingRect() const
 
 void Rectangle::serialize(QDataStream &out) const
 {
+    out << shape_type;
     out << shapeId;
     out << rectangle;
 }
 
 std::unique_ptr<BaseShape> Rectangle::deserialize(QDataStream &in)
 {
-    int shapeId;
+    quint32 shapeId;
     QRect r;
     in >> shapeId;
     in >> r;

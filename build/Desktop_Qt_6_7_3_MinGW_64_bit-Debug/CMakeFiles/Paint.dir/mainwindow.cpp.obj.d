@@ -398,14 +398,49 @@ CMakeFiles/Paint.dir/mainwindow.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h \
+ C:/Qt/6.7.3/mingw_64/include/QtGui/QActionGroup \
+ C:/Qt/6.7.3/mingw_64/include/QtGui/qactiongroup.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/QFileDialog \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qfiledialog.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdir.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qfiledevice.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/filesystem \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_fwd.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_path.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/locale \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.tcc \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_conv.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iomanip \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/quoted_string.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/codecvt \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_dir.h \
+ C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_ops.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qfileinfo.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qtimezone.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:\Users\vova4\Documents\Paint\Paint\PaintArea.h \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/QFrame \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qframe.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/QMouseEvent \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qevent.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qeventpoint.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qvector2d.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qvectornd.h \
@@ -432,7 +467,6 @@ CMakeFiles/Paint.dir/mainwindow.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qeventloop.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/QPainter \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qpainter.h \
@@ -440,26 +474,6 @@ CMakeFiles/Paint.dir/mainwindow.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QFile \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qfile.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qfiledevice.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/filesystem \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_fwd.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_path.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/locale \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.tcc \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_conv.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iomanip \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/quoted_string.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/codecvt \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_dir.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_ops.h \
  C:\Users\vova4\Documents\Paint\Paint\States.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/BaseShape.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QPoint \
@@ -477,8 +491,6 @@ CMakeFiles/Paint.dir/mainwindow.cpp.obj: \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/ellipse.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/triangle.h \
  C:\Users\vova4\Documents\Paint\Paint\connection.h \
- C:/Qt/6.7.3/mingw_64/include/QtGui/QActionGroup \
- C:/Qt/6.7.3/mingw_64/include/QtGui/qactiongroup.h \
  C:/Users/vova4/Documents/Paint/Paint/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/Paint_autogen/include/ui_mainwindow.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qvariant.h \

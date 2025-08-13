@@ -480,6 +480,18 @@ CMakeFiles/Paint.dir/Paint_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h \
- C:/Users/vova4/Documents/Paint/Paint/PaintArea.h \
  C:/Qt/6.7.3/mingw_64/include/QtGui/QActionGroup \
- C:/Qt/6.7.3/mingw_64/include/QtGui/qactiongroup.h
+ C:/Qt/6.7.3/mingw_64/include/QtGui/qactiongroup.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/QFileDialog \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qfiledialog.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdir.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qfileinfo.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qtimezone.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+ C:/Users/vova4/Documents/Paint/Paint/PaintArea.h

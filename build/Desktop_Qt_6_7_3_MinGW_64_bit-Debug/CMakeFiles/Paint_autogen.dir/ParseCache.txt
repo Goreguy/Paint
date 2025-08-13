@@ -470,6 +470,7 @@ C:/Users/vova4/Documents/Paint/Paint/mainwindow.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qbytearrayalgorithms.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qbytearraylist.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qbytearrayview.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qcalendar.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qchar.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qcompare.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qcompare_impl.h
@@ -486,14 +487,17 @@ C:/Users/vova4/Documents/Paint/Paint/mainwindow.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qcoreevent.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdatetime.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdebug.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qdir.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qelapsedtimer.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qendian.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qeventloop.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qexceptionhandling.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qfile.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qfiledevice.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qfileinfo.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qflags.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qfloat16.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qforeach.h
@@ -564,6 +568,7 @@ C:/Users/vova4/Documents/Paint/Paint/mainwindow.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtdeprecationmarkers.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtenvironmentvariables.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtextstream.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtimezone.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtmetamacros.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtnoop.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtCore/qtpreprocessorsupport.h
@@ -626,18 +631,24 @@ C:/Users/vova4/Documents/Paint/Paint/mainwindow.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtGui/qvectornd.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QFileDialog
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QFrame
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QHBoxLayout
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMainWindow
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolBar
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/QToolButton
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qboxlayout.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialog.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qfiledialog.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayout.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qlayoutitem.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmainwindow.h
+ mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtabwidget.h
  mdp:C:/Qt/6.7.3/mingw_64/include/QtWidgets/qtoolbar.h

@@ -23,6 +23,9 @@ public:
     void setTool(ToolType toolType);
     QPainter* painter;
 
+    bool saveFile(const QString &filePath);
+    bool loadFile(const QString &filePath);
+
 protected:
     void paintEvent(QPaintEvent *evt) override;
     void mousePressEvent(QMouseEvent *evt) override;
@@ -57,6 +60,7 @@ private:
     void drawLink();
     void moveShape();
     void removeShape();
+
 
     typedef void (PaintArea::*ToolMethod)();
     std::unordered_map<ToolType, ToolMethod> mousePressEventsMap;

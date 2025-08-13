@@ -10,7 +10,8 @@ BaseShape::BaseShape(ShapeType type, const QRect& r)
 {
 }
 
-std::unique_ptr<BaseShape> BaseShape::deserialize(QDataStream &in) {
+std::unique_ptr<BaseShape> BaseShape::deserialize(QDataStream &in)
+{
     ShapeType type;
     in >> type;
     switch (static_cast<ShapeType>(type)) {

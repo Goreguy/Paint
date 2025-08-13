@@ -17,15 +17,18 @@ public:
     BaseShape* getFirstShape() const { return a; }
     BaseShape* getSecondShape() const { return b; }
 
+    int getIdFirstShape() const { return a->getId(); }
+    int getIdSecondShape() const { return b->getId(); }
+
     void translate(const QPoint &delta)
     {
         // connections don't have their own coords; they follow connected shapes
         Q_UNUSED(delta);
     }
 
-    void serialize(QDataStream &out, const std::vector<BaseShape*> &shapes) const;
+    void serialize(QDataStream &out) const;
 
-    // static std::unique_ptr<Connection> deserialize(QDataStream &in, const std::unordered_map<int, BaseShape*>& shapeMap);
+    static std::pair<quint32, quint32> deserialize(QDataStream &in);
 
 
 private:

@@ -5,8 +5,11 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QHBoxLayout>
-#include "PaintArea.h"
 #include <QActionGroup>
+#include <QFileDialog>
+#include <QMessageBox>
+
+#include "PaintArea.h"
 #include "States.h"
 
 
@@ -37,6 +40,12 @@ private:
     QAction* createAction(const QString &actionName, QToolBar* toolB, const ToolType toolType);
     void spacer(QToolBar* toolB, int size = 0);
     PaintArea* createPaintArea();
+
+    typedef void (MainWindow::*ToolMethod)();
+    std::unordered_map<ToolType, ToolMethod> fileSaveLoadMap;
+
+    void onActionSave();
+    void onActionLoad();
 
 private slots:
     void slotButtonPressed();

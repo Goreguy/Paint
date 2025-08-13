@@ -148,9 +148,9 @@ void PaintArea::removeShape()
         for(auto it = connections.begin(); it != connections.end();)
         {
             Connection* c = it->get();
-            if(c-> getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)
+            if(c->getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)
             {
-                if(c-> getFirstShape() != sToRemove) c-> getFirstShape()->removeConnection(c);
+                if(c->getFirstShape() != sToRemove) c->getFirstShape()->removeConnection(c);
                 if(c->getSecondShape() != sToRemove) c->getSecondShape()->removeConnection(c);
                 it = connections.erase(it);
             }
@@ -257,4 +257,74 @@ void PaintArea::moveShape()
         startPoint = s->center();
     }
 
+}
+
+bool PaintArea::saveFile(const QString &filePath)
+{
+
+    QFile f(filePath);
+    if(!f.open(QIODevice::WriteOnly)) return false;
+    QDataStream out(&f);
+    out.setVersion(QDataStream::Qt_5_15);
+    out << (quint32) shapes.size();
+    for(const auto &s : shapes) s->serialize(out);
+
+    out << (quint32)connections.size();
+
+    std::vector<BaseShape*> shapeCollection;
+    for(auto &s : shapes) shapeCollection.push_back(s.get());
+    for(const auto &c : connections) c->serialize(out);
+
+    return true;
+}
+
+bool PaintArea::loadFile(const QString &filePath)
+{
+
+    QFile f(filePath);
+    if(!f.open(QIODevice::ReadOnly)) return false;
+    QDataStream in(&f);
+    in.setVersion(QDataStream::Qt_5_15);
+
+    // clear existing
+    connections.clear();
+    shapes.clear();
+    connectionStartFromShape = nullptr;
+    drawingAll = false;
+
+    quint32 nShapes;
+    in >> nShapes;
+    for(quint32 i = 0; i < nShapes; ++i)
+    {
+        auto s = BaseShape::deserialize(in);
+        if(s) shapes.emplace_back(std::move(s));
+    }
+
+    std::unordered_map<quint32, BaseShape*> shapeMap;
+    for (auto &sh : shapes)
+    {
+        shapeMap[sh->getId()] = sh.get();
+    }
+
+    quint32 nCon;
+    in >> nCon;
+    // read pairs and create connections
+    for (quint32 i = 0; i < nCon; ++i)
+    {
+        auto [fromId, toId] = Connection::deserialize(in);
+
+        auto itFrom = shapeMap.find(fromId);
+        auto itTo   = shapeMap.find(toId);
+
+        if (itFrom != shapeMap.end() && itTo != shapeMap.end())
+        {
+            auto c = std::make_unique<Connection>(itFrom->second, itTo->second);
+            itFrom->second->addConnection(c.get());
+            itTo->second->addConnection(c.get());
+            connections.push_back(std::move(c));
+        }
+    }
+
+    this->update();
+    return true;
 }

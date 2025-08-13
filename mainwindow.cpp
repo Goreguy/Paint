@@ -15,6 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     paintArea = createPaintArea();
     this->setCentralWidget(paintArea);
 
+    fileSaveLoadMap = {
+        { ToolType::SaveTool, &MainWindow::onActionSave},
+        { ToolType::LoadTool, &MainWindow::onActionLoad}
+    };
+
 }
 
 QToolBar* MainWindow::createToolBar()
@@ -86,6 +91,22 @@ PaintArea* MainWindow::createPaintArea()
 {
     PaintArea* paintAr = new PaintArea();
     return paintAr;
+}
+
+void MainWindow::onActionSave()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save drawing"), QString(), tr("PaintProj (*.dat)"));
+    if(fileName.isEmpty()) return;
+    if(!paintArea->saveFile(fileName))
+        QMessageBox::warning(this, tr("Save failed"), tr("Could not save file"));
+}
+
+void MainWindow::onActionLoad()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open drawing"), QString(), tr("PaintProj (*.dat)"));
+    if(fileName.isEmpty()) return;
+    if(!paintArea->loadFile(fileName))
+        QMessageBox::warning(this, tr("Load failed"), tr("Could not load file"));
 }
 
 MainWindow::~MainWindow()

@@ -36,6 +36,7 @@ QRect Ellipse::boundingRect() const
 
 void Ellipse::serialize(QDataStream &out) const
 {
+    out << shape_type;
     out << shapeId;
     out << rectangle;
 }

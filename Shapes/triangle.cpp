@@ -49,6 +49,7 @@ QRect Triangle::boundingRect() const
 
 void Triangle::serialize(QDataStream &out) const
 {
+    out << shape_type;
     out << shapeId;
     out << rectangle;
 }

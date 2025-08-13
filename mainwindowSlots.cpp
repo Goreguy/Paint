@@ -2,8 +2,14 @@
 
 void MainWindow::slotButtonPressed()
 {
-    ToolType buttonType = mapButtonTool[sender()];
-    paintArea->setTool(buttonType);
 
+    ToolType buttonType = mapButtonTool[sender()];
+    if (fileSaveLoadMap.contains(buttonType))
+    {
+        (this->*fileSaveLoadMap[buttonType])();
+        return;
+    }
+
+    paintArea->setTool(buttonType);
 
 }
