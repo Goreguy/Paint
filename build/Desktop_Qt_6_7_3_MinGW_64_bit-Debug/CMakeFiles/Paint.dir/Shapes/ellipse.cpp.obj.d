@@ -370,32 +370,5 @@ CMakeFiles/Paint.dir/Shapes/ellipse.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qpolygon.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QString \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qstring.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/QJsonObject \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qjsonobject.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qjsonvalue.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcborvalue.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcalendar.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qlocale.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qvariant.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qdebug.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qtextstream.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcontiguouscache.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/climits \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qsharedpointer.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qsharedpointer_impl.h \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ratio \
- C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ctime \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qmap.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qshareddata_impl.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qset.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qhash.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qvarlengtharray.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qobject.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qobject_impl.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qbindingstorage.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcborcommon.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qregularexpression.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qurl.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/quuid.h
+ C:/Qt/6.7.3/mingw_64/include/QtCore/QDataStream \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdatastream.h

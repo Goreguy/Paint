@@ -19,7 +19,7 @@ void Rectangle::resize(const QRect& newBounds)
     rectangle = newBounds;
 }
 
-void Rectangle::move(const QPoint& delta)
+void Rectangle::moveShape(const QPoint& delta)
 {
     rectangle.translate(delta);
 }
@@ -34,14 +34,19 @@ QRect Rectangle::boundingRect() const
     return rectangle;
 }
 
-QJsonObject Rectangle::serialize() const
+void Rectangle::serialize(QDataStream &out) const
 {
-    QJsonObject obj;
-    obj["type"] = "Rectangle";
-    obj["x"] = rectangle.x();
-    obj["y"] = rectangle.y();
-    obj["width"] = rectangle.width();
-    obj["height"] = rectangle.height();
+    out << shapeId;
+    out << rectangle;
+}
 
-    return obj;
+std::unique_ptr<BaseShape> Rectangle::deserialize(QDataStream &in)
+{
+    int shapeId;
+    QRect r;
+    in >> shapeId;
+    in >> r;
+    auto shape = std::make_unique<Rectangle>(r);
+    shape->setId(shapeId);
+    return shape;
 }

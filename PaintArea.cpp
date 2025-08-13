@@ -18,7 +18,9 @@ PaintArea::PaintArea(QFrame* parent)
         { ToolType::RectangleTool, &PaintArea::drawShape},
         { ToolType::EllipseTool, &PaintArea::drawShape},
         { ToolType::TriangleTool, &PaintArea::drawShape},
-        { ToolType::LinkTool, &PaintArea::drawLink}
+        { ToolType::LinkTool, &PaintArea::drawLink},
+        { ToolType::MoveTool, &PaintArea::moveShape},
+        { ToolType::EraseTool, &PaintArea::removeShape}
     };
 }
 
@@ -53,7 +55,7 @@ void PaintArea::paintEvent(QPaintEvent *evt)
     if (!drawingAll) return;
 
     //превью соединения
-    if (connectingShapes)
+    if (drawingLink)
     {
         setMouseTracking(true);
         p.drawLine(connectionStartFromShape->center(), currentPoint);
@@ -74,20 +76,14 @@ void PaintArea::paintEvent(QPaintEvent *evt)
 void PaintArea::mousePressEvent(QMouseEvent *evt)
 {
     if (!mousePressEventsMap.contains(currentTool)) return;
+
     if (evt->button() == Qt::LeftButton)
     {
         startPoint = evt->pos();
         currentPoint = startPoint;
-        (this->*mousePressEventsMap[currentTool])();
 
-         /*else if(currentTool==Tool::Move){
-            Shape *s = pickShapeAt(startPoint);
-            if(s){ movingShape = s; lastMousePos = startPoint; setCursor(Qt::ClosedHandCursor); }
-        } else if(currentTool==Tool::Delete){
-            Shape *s = pickShapeAt(startPoint);
-            if(s){ removeShape(s); update(); }
-        }
-        return;*/
+        (this->*mousePressEventsMap[currentTool])();
+        return;
     }
 
     if (evt->button() == Qt::RightButton)
@@ -100,7 +96,7 @@ void PaintArea::mouseMoveEvent(QMouseEvent *evt)
 {
     currentPoint = evt->pos();
 
-    if (connectingShapes)
+    if (drawingLink)
     {
         this->update();
         return;
@@ -108,8 +104,7 @@ void PaintArea::mouseMoveEvent(QMouseEvent *evt)
     if (movingShape)
     {
         QPoint delta = currentPoint - lastMousePos;
-        //movingShape->translate(delta);
-        // connections follow shapes automatically (they reference centers)
+        movingShape->moveShape(delta);
         lastMousePos = currentPoint;
         this->update();
         return;
@@ -127,37 +122,52 @@ void PaintArea::mouseReleaseEvent(QMouseEvent *evt)
     if (drawingShape)
     {
         drawingShape = false;
-        // drawingAll = false;
+        return;
     }
-    /*else if(currentTool==Tool::Move && movingShape){
-        movingShape = nullptr; setCursor(Qt::ArrowCursor); update();
-    }*/
+    if(movingShape)
+    {
+        movingShape = nullptr;
+        setCursor(Qt::ArrowCursor);
+        update();
+    }
 }
 
 void PaintArea::keyPressEvent(QKeyEvent *evt)
 {
-    if(evt->key() == Qt::Key_Escape)
+    if (evt->key() == Qt::Key_Escape)
     {
         cancelOperations();
     }
 }
 
-void PaintArea::removeShape(BaseShape* s)
+void PaintArea::removeShape()
 {
-    // // remove associated connections
-    // for(auto it = connections.begin(); it != connections.end(); ){
-    //     Connection* c = it->get();
-    //     if(c->first()==s || c->second()==s){
-    //         // notify the other shape
-    //         if(c->first()!=s) c->first()->removeConnection(c);
-    //         if(c->second()!=s) c->second()->removeConnection(c);
-    //         it = connections.erase(it);
-    //     } else ++it;
-    // }
+    BaseShape *sToRemove = pickShapeAt(startPoint);
+    if (sToRemove)
+    {
+        for(auto it = connections.begin(); it != connections.end();)
+        {
+            Connection* c = it->get();
+            if(c-> getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)
+            {
+                if(c-> getFirstShape() != sToRemove) c-> getFirstShape()->removeConnection(c);
+                if(c->getSecondShape() != sToRemove) c->getSecondShape()->removeConnection(c);
+                it = connections.erase(it);
+            }
+            else ++it;
+        }
 
-    // // remove shape
-    // auto it = std::find_if(shapes.begin(), shapes.end(), [&](const std::unique_ptr<Shape> &up){ return up.get()==s; });
-    // if(it!=shapes.end()) shapes.erase(it);
+        auto it = std::find_if(shapes.begin(), shapes.end(),
+                               [sToRemove](const std::unique_ptr<BaseShape>& s) {
+                                   return s.get() == sToRemove;
+                               });
+
+        if (it != shapes.end())
+        {
+            shapes.erase(it);
+        }
+        this->update();
+    }
 }
 
 void PaintArea::drawShape()
@@ -174,49 +184,77 @@ void PaintArea::drawLink()
     if(!drawingLink)
     {
         drawingLink = true;
-        connectingShapes = true;
         BaseShape *s = pickShapeAt(startPoint);
-        if (s)
+
+        if (!s)
         {
-            connectionStartFromShape = s;
-            drawingAll = true;
-            this ->update();
+            cancelOperations();
+            return;
         }
+
+        connectionStartFromShape = s;
+        drawingAll = true;
+        this ->update();
         return;
     }
 
     BaseShape* endShape = pickShapeAt(currentPoint);
-    if(endShape && endShape!=connectionStartFromShape)
+    if (connectionExists(connectionStartFromShape, endShape))
+    {
+        cancelOperations();
+        return;
+    }
+
+    if(endShape && endShape != connectionStartFromShape)
     {
         Connection *c = new Connection(connectionStartFromShape, endShape);
         connections.emplace_back(c);
         connectionStartFromShape->addConnection(c);
         endShape->addConnection(c);
-
     }
-    drawingLink = false;
-    connectingShapes = false;
-    connectionStartFromShape = nullptr;
-    drawingAll = false;
-    this->update();
-    setMouseTracking(false);
 
+    cancelOperations();
 
 }
 
 void PaintArea::cancelOperations()
 {
-    //if (currentTool != ToolType::LinkTool) shapes.pop_back();
     if (drawingShape)
     {
         drawingShape = false;
         shapes.pop_back();
     }
-    connectingShapes = false;
+    setMouseTracking(false);
+    drawingLink = false;
     currentShape = nullptr;
     drawingAll = false;
-    connectionStartFromShape=nullptr;
+    connectionStartFromShape = nullptr;
+    if(movingShape) movingShape->moveShape(startPoint - movingShape->center());
     movingShape = nullptr;
     setCursor(Qt::ArrowCursor);
     this->update();
+}
+
+bool PaintArea::connectionExists(const BaseShape* a, const BaseShape* b)
+{
+    for (const auto &c : connections)
+    {
+        if (c->getFirstShape() == a && c->getSecondShape() == b) return true;
+        if (c->getFirstShape() == b && c->getSecondShape() == a) return true;
+    }
+    return false;
+}
+
+void PaintArea::moveShape()
+{
+    BaseShape* s = pickShapeAt(startPoint);
+
+    if(s)
+    {
+        movingShape = s;
+        lastMousePos = startPoint;
+        setCursor(Qt::ClosedHandCursor);
+        startPoint = s->center();
+    }
+
 }

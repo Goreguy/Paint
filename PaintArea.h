@@ -34,28 +34,29 @@ private:
     ToolType currentTool = ToolType::NoneTool;
     QPoint startPoint;
     QPoint currentPoint;
+    QPoint lastMousePos;
     bool drawingAll = false;
     bool drawingShape = false;
     bool drawingLink = false;
-    bool connectingShapes = false;
     BaseShape* currentShape = nullptr;
 
 
     std::vector<std::unique_ptr<BaseShape>> shapes;
     std::vector<std::unique_ptr<Connection>> connections;
+    bool connectionExists(const BaseShape* a, const BaseShape* b);
 
     BaseShape* pickShapeAt(const QPoint &pt);
-    void removeShape(BaseShape* s);
 
     BaseShape* connectionStartFromShape = nullptr;
     BaseShape* movingShape = nullptr;
-    QPoint lastMousePos;
 
     std::unordered_map<ToolType, std::function<void(const QRect&)>> drawMap;
 
     void cancelOperations();
     void drawShape();
     void drawLink();
+    void moveShape();
+    void removeShape();
 
     typedef void (PaintArea::*ToolMethod)();
     std::unordered_map<ToolType, ToolMethod> mousePressEventsMap;

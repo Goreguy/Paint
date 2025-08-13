@@ -19,7 +19,7 @@ void Ellipse::resize(const QRect& newBounds)
     rectangle = newBounds;
 }
 
-void Ellipse::move(const QPoint& delta)
+void Ellipse::moveShape(const QPoint& delta)
 {
     rectangle.translate(delta);
 }
@@ -34,14 +34,22 @@ QRect Ellipse::boundingRect() const
     return rectangle;
 }
 
-QJsonObject Ellipse::serialize() const
+void Ellipse::serialize(QDataStream &out) const
 {
-    QJsonObject obj;
-    obj["type"] = "Ellipse";
-    obj["x"] = rectangle.x();
-    obj["y"] = rectangle.y();
-    obj["width"] = rectangle.width();
-    obj["height"] = rectangle.height();
-
-    return obj;
+    out << shapeId;
+    out << rectangle;
 }
+
+std::unique_ptr<BaseShape> Ellipse::deserialize(QDataStream &in)
+{
+    int shapeId;
+    QRect r;
+    in >> shapeId;
+    in >> r;
+    auto shape = std::make_unique<Ellipse>(r);
+    shape->setId(shapeId);
+    return shape;
+}
+
+
+

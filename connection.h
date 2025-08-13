@@ -3,6 +3,7 @@
 
 #include <QPoint>
 #include <QPainter>
+#include <QDataStream>
 
 #include "Shapes/BaseShape.h"
 
@@ -11,13 +12,7 @@ class Connection
 public:
     Connection(BaseShape* a, BaseShape* b) : a(a), b(b) {}
 
-    void draw(QPainter &p) const
-    {
-        p.save();
-        p.setPen(QPen(Qt::black, 1));
-        p.drawLine(a->center(), b->center());
-        p.restore();
-    }
+    void draw(QPainter &p) const;
 
     BaseShape* getFirstShape() const { return a; }
     BaseShape* getSecondShape() const { return b; }
@@ -28,14 +23,10 @@ public:
         Q_UNUSED(delta);
     }
 
-    void serialize(QDataStream &out, const std::vector<BaseShape*> &shapes) const
-    {
-        // write indices of shapes in shapes vector
-        int ia = -1, ib = -1;
-        for(int i=0;i<(int)shapes.size();++i){ if(shapes[i]==a) ia=i; if(shapes[i]==b) ib=i; }
-        out << ia << ib;
-    }
-    static std::pair<int,int> deserializePair(QDataStream &in){ int ia,ib; in>>ia>>ib; return {ia,ib}; }
+    void serialize(QDataStream &out, const std::vector<BaseShape*> &shapes) const;
+
+    // static std::unique_ptr<Connection> deserialize(QDataStream &in, const std::unordered_map<int, BaseShape*>& shapeMap);
+
 
 private:
     BaseShape *a;

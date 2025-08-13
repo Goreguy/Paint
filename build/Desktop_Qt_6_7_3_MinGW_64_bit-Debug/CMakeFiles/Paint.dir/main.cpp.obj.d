@@ -470,15 +470,8 @@ CMakeFiles/Paint.dir/main.cpp.obj: \
  C:/Qt/6.7.3/mingw_64/include/QtGui/qpolygon.h \
  C:/Qt/6.7.3/mingw_64/include/QtCore/QString \
  C:/Qt/6.7.3/mingw_64/include/QtCore/qstring.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/QJsonObject \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qjsonobject.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qjsonvalue.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcborvalue.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcalendar.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qcborcommon.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/qregularexpression.h \
- C:/Qt/6.7.3/mingw_64/include/QtCore/quuid.h \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/QDataStream \
+ C:/Qt/6.7.3/mingw_64/include/QtCore/qdatastream.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/rectangle.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/BaseShape.h \
  C:\Users\vova4\Documents\Paint\Paint\Shapes/ellipse.h \

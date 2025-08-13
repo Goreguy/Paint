@@ -32,7 +32,7 @@ void Triangle::resize(const QRect& newBounds)
 }
 
 
-void Triangle::move(const QPoint& delta)
+void Triangle::moveShape(const QPoint& delta)
 {
     polygon.translate(delta);
 }
@@ -47,18 +47,19 @@ QRect Triangle::boundingRect() const
     return polygon.boundingRect();
 }
 
-QJsonObject Triangle::serialize() const
+void Triangle::serialize(QDataStream &out) const
 {
-    QJsonObject obj;
-    obj["type"] = "Triangle";
+    out << shapeId;
+    out << rectangle;
+}
 
-    // Заполняем координаты для вершин треугольника
-    obj["x1"] = polygon[0].x();
-    obj["y1"] = polygon[0].y();
-    obj["x2"] = polygon[1].x();
-    obj["y2"] = polygon[1].y();
-    obj["x3"] = polygon[2].x();
-    obj["y3"] = polygon[2].y();
-
-    return obj;
+std::unique_ptr<BaseShape> Triangle::deserialize(QDataStream &in)
+{
+    int shapeId;
+    QRect r;
+    in >> shapeId;
+    in >> r;
+    auto shape = std::make_unique<Triangle>(r);
+    shape->setId(shapeId);
+    return shape;
 }

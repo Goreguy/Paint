@@ -12,11 +12,12 @@ public:
     void draw(QPainter* painter) override;
     bool contains(const QPoint& point) const override;
     void resize(const QRect& newBounds) override;
-    void move(const QPoint& delta) override;
+    void moveShape(const QPoint& delta) override;
     QPoint center() const override;
     QRect boundingRect() const override;
 
-    QJsonObject serialize() const override;
+    void serialize(QDataStream &out) const override;
+    static std::unique_ptr<BaseShape> deserialize(QDataStream &in);
 
 private:
     QPolygon polygon;
