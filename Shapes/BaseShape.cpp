@@ -22,15 +22,10 @@ std::unique_ptr<BaseShape> BaseShape::deserialize(QDataStream &in)
     return nullptr;
 }
 
-int BaseShape::countAndSetId()
+quint32 BaseShape::countAndSetId()
 {
-    static int counter{0};
+    static quint32 counter{0};
     return ++counter;
-}
-
-void BaseShape::setId(int id)
-{
-    shapeId = id;
 }
 
 void BaseShape::addConnection(Connection *c)
@@ -41,10 +36,8 @@ void BaseShape::addConnection(Connection *c)
 void BaseShape::removeConnection(Connection *c)
 {
     auto it = std::find(connections.begin(), connections.end(), c);
-    if (it != connections.end())
-    {
-        connections.erase(it);
-    }
+    if (it != connections.end()) connections.erase(it);
+
 }
 
 

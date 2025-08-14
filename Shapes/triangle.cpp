@@ -2,7 +2,9 @@
 
 Triangle::Triangle(const QRect& r)
     : BaseShape(ShapeType::Triangle, r)
-{}
+{
+
+}
 
 void Triangle::draw(QPainter* painter)
 {
@@ -16,21 +18,18 @@ bool Triangle::contains(const QPoint& point) const
 
 void Triangle::resize(const QRect& newBounds)
 {
-    // Убедимся, что полигон имеет три точки
-    if (polygon.size() < 3) {
-        polygon = QPolygon(3); // Создаем полигон с тремя точками
-    }
+    if (polygon.size() < 3) polygon = QPolygon(3);
 
     QPoint center = newBounds.center();
     int width = newBounds.width();
     int height = newBounds.height();
 
-    // Обновляем вершины
     polygon[0] = QPoint(center.x(), center.y() - height / 2);
     polygon[1] = QPoint(center.x() - width / 2, center.y() + height / 2);
     polygon[2] = QPoint(center.x() + width / 2, center.y() + height / 2);
-}
 
+    rectangle = newBounds;
+}
 
 void Triangle::moveShape(const QPoint& delta)
 {
@@ -50,17 +49,17 @@ QRect Triangle::boundingRect() const
 void Triangle::serialize(QDataStream &out) const
 {
     out << shape_type;
-    out << shapeId;
+    out << getId();
     out << rectangle;
 }
 
 std::unique_ptr<BaseShape> Triangle::deserialize(QDataStream &in)
 {
-    int shapeId;
+    quint32 shapeId;
     QRect r;
-    in >> shapeId;
-    in >> r;
+    in >> shapeId >> r;
     auto shape = std::make_unique<Triangle>(r);
+    shape->Triangle::resize(r);
     shape->setId(shapeId);
     return shape;
 }

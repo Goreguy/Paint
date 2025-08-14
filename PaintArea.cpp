@@ -94,6 +94,8 @@ void PaintArea::mousePressEvent(QMouseEvent *evt)
 
 void PaintArea::mouseMoveEvent(QMouseEvent *evt)
 {
+    if (!mousePressEventsMap.contains(currentTool)) return;
+
     currentPoint = evt->pos();
 
     if (drawingLink)
@@ -119,9 +121,12 @@ void PaintArea::mouseMoveEvent(QMouseEvent *evt)
 
 void PaintArea::mouseReleaseEvent(QMouseEvent *evt)
 {
+    if (!mousePressEventsMap.contains(currentTool)) return;
+
     if (drawingShape)
     {
         drawingShape = false;
+        drawingAll = false;
         return;
     }
     if(movingShape)
@@ -130,6 +135,8 @@ void PaintArea::mouseReleaseEvent(QMouseEvent *evt)
         setCursor(Qt::ArrowCursor);
         update();
     }
+
+
 }
 
 void PaintArea::keyPressEvent(QKeyEvent *evt)
@@ -266,13 +273,14 @@ bool PaintArea::saveFile(const QString &filePath)
     if(!f.open(QIODevice::WriteOnly)) return false;
     QDataStream out(&f);
     out.setVersion(QDataStream::Qt_5_15);
+
     out << (quint32) shapes.size();
     for(const auto &s : shapes) s->serialize(out);
 
     out << (quint32)connections.size();
 
-    std::vector<BaseShape*> shapeCollection;
-    for(auto &s : shapes) shapeCollection.push_back(s.get());
+    // std::vector<BaseShape*> shapeCollection;
+    // for(auto &s : shapes) shapeCollection.push_back(s.get());
     for(const auto &c : connections) c->serialize(out);
 
     return true;
@@ -289,21 +297,16 @@ bool PaintArea::loadFile(const QString &filePath)
     // clear existing
     connections.clear();
     shapes.clear();
-    connectionStartFromShape = nullptr;
-    drawingAll = false;
+    cancelOperations();
 
+    std::unordered_map<quint32, BaseShape*> shapeMap;
     quint32 nShapes;
     in >> nShapes;
     for(quint32 i = 0; i < nShapes; ++i)
     {
         auto s = BaseShape::deserialize(in);
-        if(s) shapes.emplace_back(std::move(s));
-    }
-
-    std::unordered_map<quint32, BaseShape*> shapeMap;
-    for (auto &sh : shapes)
-    {
-        shapeMap[sh->getId()] = sh.get();
+        shapeMap[s->getId()] = s.get();
+        shapes.emplace_back(std::move(s));
     }
 
     quint32 nCon;

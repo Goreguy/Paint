@@ -20,11 +20,10 @@ public:
     int getIdFirstShape() const { return a->getId(); }
     int getIdSecondShape() const { return b->getId(); }
 
-    void translate(const QPoint &delta)
-    {
-        // connections don't have their own coords; they follow connected shapes
-        Q_UNUSED(delta);
-    }
+    // void translate(const QPoint &delta)
+    // {
+    //     Q_UNUSED(delta);
+    // }
 
     void serialize(QDataStream &out) const;
 

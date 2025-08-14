@@ -13,8 +13,7 @@ enum class ShapeType
 {
     Rectangle,
     Triangle,
-    Ellipse,
-    Link
+    Ellipse
 
 };
 
@@ -35,22 +34,22 @@ public:
 
     void addConnection(Connection *c);
     void removeConnection(Connection *c);
-    int getId() { return shapeId;}
 
-
+    quint32 getId() const { return shapeId;}
+    void setId(quint32 id){shapeId = id;}
 
     virtual void serialize(QDataStream &out) const = 0;
-    static std::unique_ptr<BaseShape> deserialize(QDataStream &in);//реализовать
+    static std::unique_ptr<BaseShape> deserialize(QDataStream &in);
 
 protected:
-    int shapeId;
+    quint32 shapeId;
     std::vector<Connection*> connections;
     ShapeType shape_type;
     QRect rectangle;
-    void setId(int id);
+
 
 private:
-    static int countAndSetId();
+    static quint32 countAndSetId();
 
 
 };

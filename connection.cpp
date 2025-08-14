@@ -11,7 +11,6 @@ void Connection::draw(QPainter &p) const
 
 void Connection::serialize(QDataStream &out) const
 {
-    // write indices of shapes in shapes vector
     out << a->getId();
     out << b->getId();
 }

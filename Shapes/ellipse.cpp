@@ -37,16 +37,15 @@ QRect Ellipse::boundingRect() const
 void Ellipse::serialize(QDataStream &out) const
 {
     out << shape_type;
-    out << shapeId;
+    out << getId();
     out << rectangle;
 }
 
 std::unique_ptr<BaseShape> Ellipse::deserialize(QDataStream &in)
 {
-    int shapeId;
+    quint32 shapeId;
     QRect r;
-    in >> shapeId;
-    in >> r;
+    in >> shapeId >> r;
     auto shape = std::make_unique<Ellipse>(r);
     shape->setId(shapeId);
     return shape;
