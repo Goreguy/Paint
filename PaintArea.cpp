@@ -163,7 +163,7 @@ void PaintArea::removeShape()
         for(auto it = connections.begin(); it != connections.end();)
         {
             Connection* c = it->get();
-            if (c->getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)//ну хз хз
+            if (c->getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)//ну 
             {
                 if(c->getFirstShape() != sToRemove) c->getFirstShape()->removeConnection(c);
                 if(c->getSecondShape() != sToRemove) c->getSecondShape()->removeConnection(c);
