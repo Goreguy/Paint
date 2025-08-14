@@ -95,18 +95,16 @@ PaintArea* MainWindow::createPaintArea()
 
 void MainWindow::onActionSave()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save drawing"), QString(), tr("PaintProj (*.dat)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save drawing"), QString(), tr("PaintProj (*.image)"));
     if(fileName.isEmpty()) return;
-    if(!paintArea->saveFile(fileName))
-        QMessageBox::warning(this, tr("Save failed"), tr("Could not save file"));
+    if(!paintArea->saveFile(fileName)) QMessageBox::warning(this, tr("Save failed"), tr("Could not save file"));
 }
 
 void MainWindow::onActionLoad()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open drawing"), QString(), tr("PaintProj (*.dat)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open drawing"), QString(), tr("PaintProj (*.image)"));
     if(fileName.isEmpty()) return;
-    if(!paintArea->loadFile(fileName))
-        QMessageBox::warning(this, tr("Load failed"), tr("Could not load file"));
+    if(!paintArea->loadFile(fileName)) QMessageBox::warning(this, tr("Load failed"), tr("Could not load file"));
 }
 
 MainWindow::~MainWindow()

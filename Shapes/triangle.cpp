@@ -18,27 +18,25 @@ bool Triangle::contains(const QPoint& point) const
 
 void Triangle::resize(const QRect& newBounds)
 {
-    if (polygon.size() < 3) polygon = QPolygon(3);
+    polygon.clear();
 
-    QPoint center = newBounds.center();
-    int width = newBounds.width();
-    int height = newBounds.height();
+    QPoint top(newBounds.left() + newBounds.width()/2, newBounds.top());
+    QPoint left(newBounds.left(), newBounds.bottom());
+    QPoint right(newBounds.right(), newBounds.bottom());
 
-    polygon[0] = QPoint(center.x(), center.y() - height / 2);
-    polygon[1] = QPoint(center.x() - width / 2, center.y() + height / 2);
-    polygon[2] = QPoint(center.x() + width / 2, center.y() + height / 2);
+    polygon << top << right << left;
 
     rectangle = newBounds;
-}
-
-void Triangle::moveShape(const QPoint& delta)
-{
-    polygon.translate(delta);
 }
 
 QPoint Triangle::center() const
 {
     return polygon.boundingRect().center();
+}
+
+void Triangle::moveShape(const QPoint& delta)
+{
+    polygon.translate(delta);
 }
 
 QRect Triangle::boundingRect() const

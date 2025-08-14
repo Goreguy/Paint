@@ -19,14 +19,14 @@ void Rectangle::resize(const QRect& newBounds)
     rectangle = newBounds;
 }
 
-void Rectangle::moveShape(const QPoint& delta)
-{
-    rectangle.translate(delta);
-}
-
 QPoint Rectangle::center() const
 {
     return rectangle.center();
+}
+
+void Rectangle::moveShape(const QPoint& delta)
+{
+    rectangle.translate(delta);
 }
 
 QRect Rectangle::boundingRect() const

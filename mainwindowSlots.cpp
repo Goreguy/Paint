@@ -11,6 +11,4 @@ void MainWindow::slotButtonPressed()
         return;
     }
 
-
-
 }

@@ -12,7 +12,7 @@ PaintArea::PaintArea(QFrame* parent)
         { ToolType::EllipseTool,   [&](const QRect &r) { shapes.emplace_back(std::make_unique<Ellipse>(r)); } },
         { ToolType::TriangleTool,  [&](const QRect &r) { shapes.emplace_back(std::make_unique<Triangle>(r)); } }
     };
-    ///мапы сделать
+
     // сделать мап для инструментов
     mousePressEventsMap = {
         { ToolType::RectangleTool, &PaintArea::drawShape},
@@ -33,7 +33,7 @@ void PaintArea::setTool(ToolType toolType)
 
 BaseShape* PaintArea::pickShapeAt(const QPoint &pt)
 {
-    for (int i = (int)shapes.size()-1; i>=0; --i)
+    for (int i = (int)shapes.size()-1; i >= 0; --i)
     {
         if(shapes[i]->contains(pt)) return shapes[i].get();
     }
@@ -48,16 +48,21 @@ void PaintArea::paintEvent(QPaintEvent *evt)
     p.setRenderHint(QPainter::Antialiasing, true);
     p.fillRect(rect(), Qt::white);
 
-    ///////////draw shapes
+    //рисовка фигур и связей
     for (const auto &s : shapes) s->draw(&p);
     for (const auto &c : connections) c->draw(p);
 
     if (!drawingAll) return;
 
-    //превью соединения
+    //превью связи
     if (drawingLink)
     {
         setMouseTracking(true);
+        if (!connectionStartFromShape)
+        {
+            cancelOperations();
+            return;
+        }
         p.drawLine(connectionStartFromShape->center(), currentPoint);
         return;
     }
@@ -103,6 +108,7 @@ void PaintArea::mouseMoveEvent(QMouseEvent *evt)
         this->update();
         return;
     }
+
     if (movingShape)
     {
         QPoint delta = currentPoint - lastMousePos;
@@ -111,6 +117,7 @@ void PaintArea::mouseMoveEvent(QMouseEvent *evt)
         this->update();
         return;
     }
+
     if (drawingAll)
     {
         QRect r(startPoint, currentPoint);
@@ -129,7 +136,8 @@ void PaintArea::mouseReleaseEvent(QMouseEvent *evt)
         drawingAll = false;
         return;
     }
-    if(movingShape)
+
+    if (movingShape)
     {
         movingShape = nullptr;
         setCursor(Qt::ArrowCursor);
@@ -155,7 +163,7 @@ void PaintArea::removeShape()
         for(auto it = connections.begin(); it != connections.end();)
         {
             Connection* c = it->get();
-            if(c->getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)
+            if (c->getFirstShape() == sToRemove || c->getSecondShape() == sToRemove)//ну хз хз
             {
                 if(c->getFirstShape() != sToRemove) c->getFirstShape()->removeConnection(c);
                 if(c->getSecondShape() != sToRemove) c->getSecondShape()->removeConnection(c);
@@ -188,7 +196,7 @@ void PaintArea::drawShape()
 
 void PaintArea::drawLink()
 {
-    if(!drawingLink)
+    if (!drawingLink)
     {
         drawingLink = true;
         BaseShape *s = pickShapeAt(startPoint);
@@ -212,7 +220,7 @@ void PaintArea::drawLink()
         return;
     }
 
-    if(endShape && endShape != connectionStartFromShape)
+    if (endShape && endShape != connectionStartFromShape)//продумать безопасное усл!
     {
         Connection *c = new Connection(connectionStartFromShape, endShape);
         connections.emplace_back(c);
@@ -231,12 +239,14 @@ void PaintArea::cancelOperations()
         drawingShape = false;
         shapes.pop_back();
     }
+
     setMouseTracking(false);
     drawingLink = false;
     currentShape = nullptr;
     drawingAll = false;
     connectionStartFromShape = nullptr;
-    if(movingShape) movingShape->moveShape(startPoint - movingShape->center());
+
+    if (movingShape) movingShape->moveShape(startPoint - movingShape->center());
     movingShape = nullptr;
     setCursor(Qt::ArrowCursor);
     this->update();
@@ -256,7 +266,7 @@ void PaintArea::moveShape()
 {
     BaseShape* s = pickShapeAt(startPoint);
 
-    if(s)
+    if (s)
     {
         movingShape = s;
         lastMousePos = startPoint;
@@ -278,9 +288,6 @@ bool PaintArea::saveFile(const QString &filePath)
     for(const auto &s : shapes) s->serialize(out);
 
     out << (quint32)connections.size();
-
-    // std::vector<BaseShape*> shapeCollection;
-    // for(auto &s : shapes) shapeCollection.push_back(s.get());
     for(const auto &c : connections) c->serialize(out);
 
     return true;
@@ -294,10 +301,9 @@ bool PaintArea::loadFile(const QString &filePath)
     QDataStream in(&f);
     in.setVersion(QDataStream::Qt_5_15);
 
-    // clear existing
     connections.clear();
     shapes.clear();
-    cancelOperations();
+    cancelOperations();//проверить правильный возврат!
 
     std::unordered_map<quint32, BaseShape*> shapeMap;
     quint32 nShapes;
@@ -311,7 +317,7 @@ bool PaintArea::loadFile(const QString &filePath)
 
     quint32 nCon;
     in >> nCon;
-    // read pairs and create connections
+
     for (quint32 i = 0; i < nCon; ++i)
     {
         auto [fromId, toId] = Connection::deserialize(in);

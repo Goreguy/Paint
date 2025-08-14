@@ -19,14 +19,14 @@ void Ellipse::resize(const QRect& newBounds)
     rectangle = newBounds;
 }
 
-void Ellipse::moveShape(const QPoint& delta)
-{
-    rectangle.translate(delta);
-}
-
 QPoint Ellipse::center() const
 {
     return rectangle.center();
+}
+
+void Ellipse::moveShape(const QPoint& delta)
+{
+    rectangle.translate(delta);
 }
 
 QRect Ellipse::boundingRect() const
